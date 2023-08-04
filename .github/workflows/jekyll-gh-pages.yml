@@ -50,6 +50,20 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
         
-        remote_theme: pages-themes/hacker@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+     - name: Deploy Ghost Theme
+  # You may pin to the exact commit or the version.
+  # uses: TryGhost/action-deploy-theme@400932e207443c76d4486635228cdfbca89b8047
+  uses: TryGhost/action-deploy-theme@v1.6.3
+  with:
+    # Ghost Admin API Url
+    api-url: 
+    # Ghost Admin API Key
+    api-key: 
+    # Files or folders to exclude (space-separated list)
+    exclude: # optional
+    # A custom theme name that overrides the default name in package.json
+    theme-name: # optional
+    # Path to a built zip file. If this is included, the `exclude` and `theme-name` options are ignored
+    file: # optional
+    # A custom directory to zip when a theme is in a subdirectory
+    working-directory: # optional
